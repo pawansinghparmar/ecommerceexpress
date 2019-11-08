@@ -10,6 +10,7 @@ var categoryRouter=require('./routes/category_route')
 var SubCatRouter=require('./routes/subcategoery_router')
 var SubsUbCategoryRoyter=require('./routes/subsubCategory_route')
 var brandRouter=require('./routes/brand_route')
+var productRouter=require('./routes/product_route')
 
 var app = express();
 var db=require('./bin/db')
@@ -25,11 +26,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/category',categoryRouter)
-app.use('/subcategory',SubCatRouter)
-app.use('/subsubcategory',SubsUbCategoryRoyter);
-app.use('/brand',brandRouter)
+app.use('/api/users', usersRouter);
+app.use('/api/category',categoryRouter)
+app.use('/api/subcategory',SubCatRouter)
+app.use('/api/subsubcategory',SubsUbCategoryRoyter);
+app.use('/api/brand',brandRouter);
+app.use('/api/product',productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
