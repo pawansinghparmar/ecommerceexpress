@@ -13,6 +13,12 @@ router.post('/createCategory',Category.createCategory);
 
 router.post('/deleteCategorybyid',Category.deleteCategorybyid);
 
-router.post('/getrelatedAllSubcategories',Category.getrelatedAllSubcategories)
+router.post('/getrelatedAllSubcategories',Category.getrelatedAllSubcategories);
+
+
+router.post('/editCategory',Category.editCategory);
+
+router.get('/getcategoryrelatedalldata',Category.getcategoryrelatedalldata);
+
 
 module.exports = router;

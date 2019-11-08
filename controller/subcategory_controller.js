@@ -8,7 +8,7 @@ exports.createSubCategory=function(req,res,next){
         name:data.name,
         description:data.description,
         creationDate:Date.now(),
-        categoryid:data.categoryid
+        categoryid:data.categoryId
 
 
     })
@@ -31,7 +31,13 @@ exports.getAllSubCategories=function(req,res,next){
     })
 }
 exports.deleteSubCategorybyid=function(req,res,next){
-    res.send('deleteby id function');
+    var data = req.body;
+    console.log(data.id);
+    SUbCategory.findByIdAndRemove(data.id,function(err,result){
+        if(err){
+            res.send(err)
+        }else{res.send(result)}
+    })   
 }
 
 exports.getallcatforsubcatbyid=function(req,res,next){
