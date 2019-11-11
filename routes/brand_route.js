@@ -9,5 +9,7 @@ router.get('/', function(req, res, next) {
 router.post('/createBrand',brand.createBrand);
 
 router.get('/findAllBrands',brand.findAllBrands);
+router.get('/allBrandRelatedData',brand.allBrandRelatedData);
+
 
 module.exports = router;

@@ -22,7 +22,7 @@ exports.createsubsubCategories=function(req,res,next){
     })
 }
 exports.getAlsubsubCategories=function(req,res,next){
-    SubSubCategory.find(function(err,result){
+    SubSubCategory.find().populate('getsCategory').populate('getsubsCategory').exec(function(err,result){
         if(err){
             res.send(err)
         }else{
@@ -44,3 +44,17 @@ exports.getrelatedSubcatandcategorydata=function(req,res,next){
         }
     })
 }
+
+exports.getsubsubcategorybyid=function(req,res,next){
+    var data=req.body;
+    console.log(data)
+  
+    SubSubCategory.findById(data.id).exec(function(err,result){
+        if(result){
+            res.send(result)
+        }else{
+            res.send(err)
+        }
+    })
+  
+  }

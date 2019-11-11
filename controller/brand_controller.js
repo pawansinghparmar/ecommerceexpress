@@ -32,3 +32,10 @@ exports.findAllBrands=function(req,res,next){
     })
 }
 
+exports.allBrandRelatedData = function(req,res,next){
+    brand.find().populate("getsbrandCategory").populate("getbrandsubCategory").populate("getbrandsubsubCategory").exec(function(err,result){
+        if(err){
+            res.send(err)
+        }else{res.send(result)}
+    })
+}

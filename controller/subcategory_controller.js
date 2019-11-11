@@ -42,7 +42,7 @@ exports.deleteSubCategorybyid=function(req,res,next){
 
 exports.getallcatforsubcatbyid=function(req,res,next){
     var data=req.body;
-    SUbCategory.findById(data.id).populate('getCategory').exec(function(err,result){
+    SUbCategory.findById(data.id).populate('getCategory').populate('getsubcategorysubsubcategory').exec(function(err,result){
         if(err){
             res.send(err)
         }else{
