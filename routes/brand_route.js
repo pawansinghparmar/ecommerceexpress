@@ -11,5 +11,7 @@ router.post('/createBrand',brand.createBrand);
 router.get('/findAllBrands',brand.findAllBrands);
 router.get('/allBrandRelatedData',brand.allBrandRelatedData);
 
+router.post('/getbranddatabyid',brand.getbranddatabyid);
+
 
 module.exports = router;

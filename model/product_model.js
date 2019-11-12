@@ -10,7 +10,9 @@ var ProductSchema = new Schema({
     categoryid:{type:String,required:true},
     subcategoryid:{type:String,required:true},
     subsubcategoryid:{type:String,required:true},
-    brandid:{type:String,required:true}
+    brandid:{type:String,required:true},
+    image:{type:String,required:true},
+    description:{type:String,required:true},
 },{
     toJSON:{virtuals:true},
     toObject:{virtuals:true}

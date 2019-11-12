@@ -9,4 +9,6 @@ router.get('/', function(req, res, next) {
 router.post('/createproduct',Product.createProduct)
 router.get('/getAllProducts',Product.getAllProducts)
 
+router.post('/getProductdatabyId',Product.getProductdatabyId)
+
 module.exports = router;
