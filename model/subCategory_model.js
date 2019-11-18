@@ -33,5 +33,12 @@ SUbCategorySchema.virtual('getsubcategoryBrand',{
     justOne: false,
 })
 
+SUbCategorySchema.virtual('getallcatforsubcatbyid',{
+    ref: 'Category',
+    localField: 'categoryid',
+    foreignField: '_id',
+    justOne: false,
+})
+
 module.exports=mongoose.model('SubCategory',SUbCategorySchema);
 

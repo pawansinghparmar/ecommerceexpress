@@ -15,4 +15,5 @@ router.post('/deleteSubCategorybyid',SUbCategory.deleteSubCategorybyid);
 
 router.post('/getallcatforsubcatbyid',SUbCategory.getallcatforsubcatbyid);
 
+
 module.exports = router;

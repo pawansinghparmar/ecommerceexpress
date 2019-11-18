@@ -22,7 +22,7 @@ exports.createSubCategory=function(req,res,next){
     })
 }
 exports.getAllSubCategories=function(req,res,next){
-    SUbCategory.find().exec(function(err,result){
+    SUbCategory.find().populate('getsubcategoryCategory').exec(function(err,result){
         if(err){
             res.send(err)
         }else{
