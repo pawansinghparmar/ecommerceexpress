@@ -31,7 +31,11 @@ exports.getAlsubsubCategories=function(req,res,next){
     })
 }
 exports.deletesubsubcategorybyid=function(req,res,next){
-    res.send('deleteby id function');
+    var data = req.body;
+    SubSubCategory.findByIdAndRemove(data.id,function(err,result){
+        if(err){res.send(err)}
+        else{res.send(result)}
+    })
 }
 
 exports.getrelatedSubcatandcategorydata=function(req,res,next){
@@ -50,11 +54,28 @@ exports.getsubsubcategorybyid=function(req,res,next){
     console.log(data)
   
     SubSubCategory.findById(data.id).exec(function(err,result){
-        if(result){
-            res.send(result)
-        }else{
+        if(err){
             res.send(err)
+        }else{
+            res.send(result)
         }
     })
   
   }
+
+  exports.editsubsubcategory=function(req,res,next){
+      var data =req.body;
+      console.log(data);
+      SubSubCategory.findByIdAndUpdate(data.id,{
+        name:data.name,
+        description:data.description,
+        creationDate:Date.now(),
+        categoryid:data.categoryid,
+        subcategoryid:data.subcategoryid,
+        // getsCategory:data.getsCategory,
+        // getsubsCategory:data.getsubsCategory
+      }).exec(function(err,result){
+          if(err){res.send(err)}
+          else{res.send(result)}
+      })
+    }

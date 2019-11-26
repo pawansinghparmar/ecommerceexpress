@@ -1,20 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var Category=require('../controller/subsubcategory_controller')
+var SubSubCategory=require('../controller/subsubcategory_controller')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a Category route');
 });
 
-router.get('/getAlsubsubCategories',Category.getAlsubsubCategories);
+router.get('/getAlsubsubCategories',SubSubCategory.getAlsubsubCategories);
 
-router.post('/createsubsubCategories',Category.createsubsubCategories);
+router.post('/createsubsubCategories',SubSubCategory.createsubsubCategories);
 
-router.post('/getsubsubcategorybyid',Category.getsubsubcategorybyid)
+router.post('/getsubsubcategorybyid',SubSubCategory.getsubsubcategorybyid);
 
-router.post('/deletesubsubcategorybyid',Category.deletesubsubcategorybyid);
+router.post('/deletesubsubcategorybyid',SubSubCategory.deletesubsubcategorybyid);
 
- router.get('/getallcatforsubcatbyid',Category.getrelatedSubcatandcategorydata);
+router.get('/getallcatforsubcatbyid',SubSubCategory.getrelatedSubcatandcategorydata);
 
+router.put('/editsubsubcategory',SubSubCategory.editsubsubcategory);
 module.exports = router;

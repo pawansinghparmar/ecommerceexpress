@@ -73,3 +73,4 @@ exports.getcategoryrelatedalldata=function(req,res,next){
         }
     })
 }
+
